@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\input{acronyms}
+
+\begin{document}
+\noindent
+To compile, first run pdflatex, then makeglossaries, then repeat pdflatex.\\
+Acronym first use \gls{cnn}\\
+Acronym subsequent \gls{cnn}\\
+Dual first use \gls{api}\\
+Dual subsequent \gls{api}\\
+Gloss item \gls{eigen}\\
+remaining text \gls{fixations}
+
+\printglossary[type=\acronymtype]
+\printglossary[type=main]
+
+\end{document}

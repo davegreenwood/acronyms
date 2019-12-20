@@ -1,6 +1,25 @@
 
+
+\newcommand*{\newdualentry}[5][]{%
+\newglossaryentry{main-#2}{name={#4},%
+text={#3\glsadd{#2}},%
+description={{#5}},%
+#1
+}%
+\newglossaryentry{#2}{
+type=\acronymtype,
+first={#4 (#3)},
+name={#3\glsadd{main-#2}},
+description={\glslink{main-#2}{#4}}
+}%
+}
+
+% USAGE:
+% \newdualentry[⟨options⟩]{⟨label⟩}{⟨abbrv⟩}{⟨long⟩}{⟨description⟩}
+
+
 % -----------------------------------------------------------------------------
-% Acronyms
+% Acronyms - These are most useful for maintaining consistent abbreviations.
 % -----------------------------------------------------------------------------
 
 %\newacronym[<key-val list>]{<label >}{<abbrv >}{<long>}
@@ -94,4 +113,140 @@
 \newacronym{eam}{EAM}{external auditory meatus}
 \newacronym{au}{AU}{action unit}
 \newacronym{hmi}{HMI}{Human Machine Interface}
+
+
+% -----------------------------------------------------------------------------
+% Dual Glossary Acronyms - These are acronyms that also have a description.
+% -----------------------------------------------------------------------------
+
+% \newdualentry[⟨options⟩]{⟨label⟩}{⟨abbrv⟩}{⟨long⟩}{⟨description⟩}
+
+\newdualentry{api}{API}{Application Programming Interface}
+{a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API}
+
+\newdualentry{por}{PoR}{Point of Regard}
+{the direction of gaze, without implying attention}
+
+\newdualentry{fac}{FACS}{Facial Action Coding System}
+{a system to classify systematically human facial movements by their appearance on the face}
+
+\newdualentry{log}{LoG}{Line of Gaze}
+{the line connecting the pupil centre, cornea centre, and the eyeball centre}
+
+\newdualentry{los}{LoS}{Line of Sight}
+{the line connecting the fovea and the centre of the cornea (also known as the visual axis)}
+
+
+% -----------------------------------------------------------------------------
+% Glossary Entries - terminology that can benefit from extra description
+% -----------------------------------------------------------------------------
+
+
+\newglossaryentry{frm}
+{
+name=Frame,
+description={Audio signal segment}
+}
+
+
+\newglossaryentry{fbank}
+{
+name=fBank,
+description={Raw filter bank energies}
+}
+
+
+\newglossaryentry{nrg}
+{
+name=Energy,
+description={Energy is the root mean square of an audio Frame}
+}
+
+
+\newglossaryentry{eigen}
+{
+name=eigenvectors,
+description={The eigenvector of a linear operation is a non-zero vector that only changes by scale, not direction, when that operation is applied}
+}
+
+\newglossaryentry{gimbal}
+{
+name=gimbal lock,
+description={The loss of a degree of freedom in a three dimensional rotation system}
+}
+
+\newglossaryentry{cepstrum}
+{
+name=cepstrum,
+description={The power spectrum of the logarithm of the power spectrum. The spelling is from the reverse of the first four letters of spectrum}
+}
+
+\newglossaryentry{smpte}
+{
+name=SMPTE,
+description={SMPTE time code is a standard to label frames of video or film defined by the Society of Motion Picture and Television Engineers}
+}
+
+
+\newglossaryentry{bark}
+{
+name=Bark,
+description={The Bark scale is a psycho-acoustical scale that ranges from 1 to 24 and corresponds to the first 24 critical bands of hearing}
+}
+
+\newglossaryentry{glint}
+{
+name=glint,
+description={The specular reflection on the surface of the cornea}
+}
+
+\newglossaryentry{nodal point}
+{
+name={nodal point},
+description={The point at which the rays entering the lens converge}
+}
+
+\newglossaryentry{Purkinje}
+{
+name={Purkinje images},
+description={The reflections of objects from the structure of the eye}
+}
+
+
+\newglossaryentry{uncanny}
+{
+name=Uncanny Valley,
+description={The phenomenon whereby a synthetic agent bearing a close resemblance to a human being arouses a sense of unease or revulsion in the viewer}
+}
+
+\newglossaryentry{hamming}
+{
+name=Hamming,
+description={A generalised cosine window, of which Hamming is an example}
+}
+
+\newglossaryentry{prosody}
+{
+name=prosody,
+description={The patterns of stress and intonation in language}
+}
+
+\newglossaryentry{fixations}
+{
+name=fixations,
+description={The gaze rests for a minimum period of around $80-100$ms within central vision}
+}
+
+
+\newglossaryentry{saccades}
+{
+name=saccades,
+description={The fast, jump-like movements of the eye between two fixated areas}
+}
+
+\newglossaryentry{asymptote}
+{
+name=asymptote,
+description={A straight line that continually approaches a given curve but does not meet it at any finite distance}
+}
 
